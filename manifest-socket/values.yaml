@@ -1,0 +1,30 @@
+replicaCount: 1
+
+image:
+  repository: wndudwns0028/flask-socket
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 14000
+  nodePort: 30201
+
+resources: {}
+
+selector:
+  app: dep-socket4
+  deployment: dep-socket4
+
+autoscaling:
+  enabled: true
+  horizontalPodAutoscaler:
+    name: dep-socket4-hpa
+    maxReplicas: 10
+    minReplicas: 1
+    targetCPUUtilizationPercentage: 50
+    scaleTargetRef:
+      apiVersion: apps/v1
+      kind: Deployment
+      name: dep-socket4
+

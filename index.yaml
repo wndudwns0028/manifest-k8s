@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  manifest-socket:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-05-26T20:55:04.00016523+09:00"
+    description: A Helm chart for Kubernetes
+    digest: 5b0ddea3523359c77716e72658728bc0962ca704caaab7bd4c2f250169d3fd9b
+    name: manifest-socket
+    type: application
+    urls:
+    - manifest-socket-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-05-26T20:55:03.999697257+09:00"

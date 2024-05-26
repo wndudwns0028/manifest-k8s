@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mychart.fullname" . }}
+  labels:
+    app: {{ .Values.selector.deployment }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.selector.deployment }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.selector.deployment }}
+    spec:
+      containers:
+      - name: flask-socket
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 10 }}
+      terminationGracePeriodSeconds: 30
