@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: {{ include "manifest-socket.fullname" . }}
   labels:
-    {{- include "manifest-socket.labels" . | nindent 4 }}
     app: {{ .Values.selector.deployment }}
 spec:
   type: {{ .Values.service.type }}
