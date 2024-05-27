@@ -8,7 +8,6 @@ image:
 service:
   type: LoadBalancer
   port: 14000
-  nodePort: 30201
 
 resources: {}
 
