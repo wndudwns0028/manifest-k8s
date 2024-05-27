@@ -14,3 +14,4 @@ spec:
       name: http
   selector:
     {{- include "manifest-socket.selectorLabels" . | nindent 4 }}
+    app: {{ .Values.selector.deployment }}
