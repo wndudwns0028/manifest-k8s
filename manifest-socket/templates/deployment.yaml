@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "mychart.fullname" . }}
+  name: {{ include "manifest-socket.fullname" . }}
   labels:
     app: {{ .Values.selector.deployment }}
 spec:
