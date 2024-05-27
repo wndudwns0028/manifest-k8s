@@ -4,11 +4,13 @@ metadata:
   name: {{ include "manifest-socket.fullname" . }}
   labels:
     app: {{ .Values.selector.deployment }}
+    {{- include "manifest-socket.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ .Values.selector.deployment }}
+      {{- include "manifest-socket.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
