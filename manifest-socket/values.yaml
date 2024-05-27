@@ -28,3 +28,5 @@ autoscaling:
       kind: Deployment
       name: dep-socket4
 
+ingress:
+  enabled: false
