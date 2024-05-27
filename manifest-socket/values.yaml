@@ -26,7 +26,7 @@ autoscaling:
     scaleTargetRef:
       apiVersion: apps/v1
       kind: Deployment
-      name: dep-socket4
+      name: helm-flaskv1-manifest-socket 
 
 ingress:
   enabled: false
