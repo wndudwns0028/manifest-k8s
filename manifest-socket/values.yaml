@@ -9,7 +9,11 @@ service:
   type: LoadBalancer
   port: 14000
 
-resources: {}
+resources:
+  limits:
+    cpu: 500m
+  requests:
+    cpu: 200m
 
 selector:
   app: dep-socket4
