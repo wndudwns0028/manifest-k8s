@@ -25,6 +25,5 @@ spec:
     blueGreen:
       activeService: {{ include "manifest-socket.fullname" . }}
       previewService: {{ include "manifest-socket.fullname" . }}-preview
-      autoPromotionEnabled: true
       scaleDownDelaySeconds: 30
       autoPromotionEnabled: false
