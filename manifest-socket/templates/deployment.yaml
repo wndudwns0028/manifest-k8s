@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Rollout
+kind: Deployment
 metadata:
   name: {{ include "manifest-socket.fullname" . }}
   labels:
@@ -21,9 +21,3 @@ spec:
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
       terminationGracePeriodSeconds: 30
-   strategy:
-    blueGreen:
-      activeService: {{ include "manifest-socket.fullname" . }}
-      previewService: {{ include "manifest-socket.fullname" . }}-preview
-      scaleDownDelaySeconds: 30
-      autoPromotionEnabled: false
