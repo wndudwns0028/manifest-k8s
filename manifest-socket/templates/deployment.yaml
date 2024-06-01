@@ -21,7 +21,7 @@ spec:
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
       terminationGracePeriodSeconds: 30
-   strategy:
+  strategy:
     blueGreen:
       activeService: {{ include "manifest-socket.fullname" . }}
       previewService: {{ include "manifest-socket.fullname" . }}-preview
